@@ -7,7 +7,8 @@
 # Version: v1
 #
 # This script will report the AWS resource usage
-#
+###############
+
 
 # AWS EC2
 # AWS LAMBDA
