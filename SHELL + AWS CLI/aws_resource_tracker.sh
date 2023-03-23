@@ -14,6 +14,9 @@
 # AWS S3
 # AWS IAM USERS
 
+# set-x #debug-mode
+
+
 # List of EC2 Instances
 echo "List of EC2 Instances"
 aws ec2 describe-instances | jq '.Reservations[].Instances[].InstanceId'
