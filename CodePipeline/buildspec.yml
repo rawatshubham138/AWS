@@ -1,21 +1,19 @@
 version: 0.2
- 
+
 phases:
   install:
-    runtime-versions:
-      nodejs: 10
     commands:
-      - apt-get install -y unzip
-
+      - echo Installing NGINX
+      - sudo apt-get update
+      - sudo apt-get install nginx -y
   build:
     commands:
       - echo Build started on `date`
-      - zip hello.zip ./index.html ./aws.gif ./1.png ./back.jpg
-   
+      - cp index.html /var/www/html/
+  post_build:
+    commands:
+      - echo Configuring NGINX
+
 artifacts:
-  type: 
   files:
-    - index.html
-    - appspec.yml
-    - scripts/install_dependencies
-    - scripts/start_server
+    - '**/*'
